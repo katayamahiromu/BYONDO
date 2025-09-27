@@ -359,46 +359,6 @@ void SceneGame::Render()
 		EffectManager::Instance().Render(rc.view, rc.projection);
 	}
 
-	// 2DデバッグGUI描画
-	/* {
-		ImGui::SetNextWindowPos(ImVec2(10, 10), ImGuiCond_FirstUseEver);
-		ImGui::SetNextWindowSize(ImVec2(300, 300), ImGuiCond_FirstUseEver);
-
-		if (ImGui::Begin("Debug Param", nullptr, ImGuiWindowFlags_None))
-		{
-			int id = 0;
-
-			// プレイヤーデバッグ描画
-			ImGui::PushID(id++);
-			{
-				PlayerManager::Instance().DrawDebugGui();
-			}
-			ImGui::PopID();
-
-			// カメラデバッグ描画
-			ImGui::PushID(id++);
-			{
-				camera.DrawDebugGui();
-			}
-			ImGui::PopID();
-
-			// カメラコントローラーデバッグ描画
-			ImGui::PushID(id++);
-			{
-				cameraController->DrawDebugGui();
-			}
-			ImGui::PopID();
-
-			// エネミーマネージャーデバッグ描画
-			ImGui::PushID(id++);
-			{
-				EnemyManager::Instance().DrawDebugGui();
-			}
-			ImGui::PopID();
-		}
-		ImGui::End();
-	}*/
-
 }
 
 
@@ -454,19 +414,6 @@ void SceneGame::RenderEnemyGauge(
 			1.0f, 0.0f, 0.0f, 1.0f);
 	}
 }
-
-//DirectX::XMFLOAT3 SceneGame::Position3Dto2D(
-//	ID3D11DeviceContext* dc,
-//	const DirectX::XMFLOAT4X4& view,
-//	const DirectX::XMFLOAT4X4& projection,
-//	DirectX::XMFLOAT3 position
-//)
-//{
-//	D3D11_VIEWPORT viewport;
-//	UINT numViewports = 1;
-//	dc->RSGetViewports(&numViewports, &viewport);
-//}
-//
 
 void SceneGame::GameClear()
 {
